@@ -51,13 +51,14 @@ body {
   position: absolute;
   top: 40%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -65,6 +66,7 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  padding-left: 35px;
 
   animation: moveInLeft 2.5s;
 }
@@ -73,7 +75,8 @@ body {
   display: block;
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 16.7px;
+  letter-spacing: 17.3px;
+  padding-left: 17.3px;
 
   animation: moveInRight 2.5s;
 }
@@ -106,4 +109,29 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
