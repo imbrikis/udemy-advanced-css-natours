@@ -67,8 +67,8 @@ body {
   font-weight: 400;
   letter-spacing: 35px;
   padding-left: 35px;
-
-  animation: moveInLeft 2.5s;
+  animation: moveInLeft 2s .5s;
+  animation-fill-mode: backwards;
 }
 
 .heading-primary-sub {
@@ -77,16 +77,12 @@ body {
   font-weight: 400;
   letter-spacing: 17.3px;
   padding-left: 17.3px;
-
-  animation: moveInRight 2.5s;
+  animation: moveInRight 2s 1s;
+  animation-fill-mode: backwards;
 }
 
 @keyframes moveInLeft {
   0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  25% {
     opacity: 0;
     transform: translateX(-100px);
   }
@@ -98,10 +94,6 @@ body {
 
 @keyframes moveInRight {
   0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  25% {
     opacity: 0;
     transform: translateX(100px);
   }
