@@ -550,7 +550,9 @@ body {
   top: 6rem;
   right: 6rem;
   z-index: 2000;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
 
 .navigation__background {
   height: 6rem;
@@ -611,6 +613,145 @@ body {
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
   width: 100%; }
+
+.navigation__icon {
+  position: relative;
+  margin-top: 3.5rem; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    width: 3rem;
+    height: .2rem;
+    background-color: #333;
+    display: inline-block;
+    transition: all .2s; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: '';
+    position: absolute;
+    left: 0; }
+  .navigation__icon::before {
+    top: -.8rem; }
+  .navigation__icon::after {
+    top: .8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.testcontainer {
+  height: 100vh;
+  width: 100%;
+  background-color: #eee;
+  position: relative; }
+  .testcontainer__checkbox {
+    display: none; }
+  .testcontainer__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: black;
+    border: .2rem solid gray;
+    border-radius: 3rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: all 1s 1s; }
+  .testcontainer__line-right, .testcontainer__line-left {
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    transform: rotate(0) translate(-50%, 0);
+    transform-origin: 0% 0%;
+    width: 100rem;
+    height: 1rem;
+    background-color: black; }
+  .testcontainer__checkbox:checked ~ .testcontainer__line-left {
+    animation: moveLeftLineOut 3s;
+    animation-fill-mode: forwards; }
+  .testcontainer__checkbox:not(:checked) ~ .testcontainer__line-left {
+    animation: moveLeftLineIn 3s;
+    animation-fill-mode: forwards; }
+  .testcontainer__checkbox:checked ~ .testcontainer__line-right {
+    animation: moveRightLineOut 3s;
+    animation-fill-mode: forwards; }
+  .testcontainer__checkbox:not(:checked) ~ .testcontainer__line-right {
+    animation: moveRightLineIn 3s;
+    animation-fill-mode: forwards; }
+  .testcontainer__checkbox:checked + .testcontainer__button {
+    top: 95%; }
+
+@keyframes moveLeftLineOut {
+  0% {
+    bottom: 10rem;
+    left: 50%;
+    transform: rotate(0) translate(-50%, 0); }
+  66% {
+    bottom: 60%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, -50%); }
+  100% {
+    bottom: 60%;
+    left: -1%;
+    transform: rotate(90deg) translate(-50%, -50%); } }
+
+@keyframes moveLeftLineIn {
+  0% {
+    bottom: 60%;
+    left: -1%;
+    transform: rotate(90deg) translate(-50%, -50%); }
+  33% {
+    bottom: 60%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, -50%); }
+  100% {
+    bottom: 10rem;
+    left: 50%;
+    transform: rotate(0) translate(-50%, 0); } }
+
+@keyframes moveRightLineOut {
+  0% {
+    bottom: 10rem;
+    left: 50%;
+    transform: rotate(0) translate(-50%, 0); }
+  66% {
+    bottom: 60%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, -50%); }
+  100% {
+    bottom: 60%;
+    left: 101%;
+    transform: rotate(90deg) translate(-50%, -50%); } }
+
+@keyframes moveRightLineIn {
+  0% {
+    bottom: 60%;
+    left: 101%;
+    transform: rotate(90deg) translate(-50%, -50%); }
+  33% {
+    bottom: 60%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, -50%); }
+  100% {
+    bottom: 10rem;
+    left: 50%;
+    transform: rotate(0) translate(-50%, 0); } }
 
 .section-about {
   background-color: #f7f7f7;
