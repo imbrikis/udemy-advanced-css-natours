@@ -154,9 +154,10 @@
     font-weight: 300;
   }
 
+  // disable flip effect on cards - affects touch devices 
+  @media only screen and (max-width: 56.25em),
+         only screen and (hover: none) {
 
-
-  @include respond(tab-port) {
     height: auto;
     border-radius: .3rem;
     background-color: $color-white;
