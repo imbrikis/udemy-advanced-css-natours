@@ -622,6 +622,7 @@ body {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     backface-visibility: hidden;
+    overflow: hidden;
     transition: all .5s; }
   .story__text {
     transform: skewX(12deg); }
@@ -788,8 +789,8 @@ body {
       right: 3.5rem; } }
 
 .navigation__background {
-  height: 7rem;
-  width: 7rem;
+  height: 6rem;
+  width: 6rem;
   border-radius: 50%;
   position: fixed;
   top: 6.5rem;
@@ -799,12 +800,12 @@ body {
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1); }
   @media (max-width: 56.25em) {
     .navigation__background {
-      top: 4.5rem;
-      right: 4.5rem; } }
+      top: 5rem;
+      right: 5rem; } }
   @media (max-width: 37.5em) {
     .navigation__background {
-      top: 3.5rem;
-      right: 3.5rem; } }
+      top: 4rem;
+      right: 4rem; } }
 
 .navigation__nav {
   height: 100vh;
